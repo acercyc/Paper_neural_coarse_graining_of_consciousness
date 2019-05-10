@@ -427,14 +427,15 @@
 			\noindent
 			Information flow $J_{t}$ from the environment $E$ to a system $Y$ at time $t$ can be defined as the conditional mutual information $I$ between the system future state $Y_{t+1}$ and the current environment current state $E_{t}$ given the current system state $Y_{t}$
 
-				\begin{equation}\label{eq:InformationFlow}
-				\left.\begin{array}
-				{rl}{J_{t}(E \rightarrow Y )} & {:= I(Y_{t+1};E_{t}|Y_{t})} \\
-				%{ } & { \ = H(Y_{t+1}|Y_{t})-H(Y_{t+1}|Y_{t},E_{t})} \\
-				%{ } & { \ = H(E_{t}|Y_{t})-H(Y_{t}|Y_{t},Y_{t+1})} \\
-				%{ } & { \ = H(E_{t}|Y_{t})-H(E_{t}|Y_{t},Y_{t+1})}\\
-				{ } & { \ = I(Y_{t+1};E_{t}) - (I(Y_{t+1};Y_{t})-I(Y_{t+1};Y_{t}|E_{t}))}
-				\end{array}\right.
+				\begin{equation}
+    				\label{eq:InformationFlow}
+    				\left.\begin{array}
+    				{rl}{J_{t}(E \rightarrow Y )} & {:= I(Y_{t+1};E_{t}|Y_{t})} \\
+    				%{ } & { \ = H(Y_{t+1}|Y_{t})-H(Y_{t+1}|Y_{t},E_{t})} \\
+    				%{ } & { \ = H(E_{t}|Y_{t})-H(Y_{t}|Y_{t},Y_{t+1})} \\
+    				%{ } & { \ = H(E_{t}|Y_{t})-H(E_{t}|Y_{t},Y_{t+1})}\\
+    				{ } & { \ = I(Y_{t+1};E_{t}) - (I(Y_{t+1};Y_{t})-I(Y_{t+1};Y_{t}|E_{t}))}
+    				\end{array}\right.
 				\end{equation}
 
 				\begin{figure}
@@ -482,20 +483,21 @@
 			\noindent
 			And, non-trivial informational closure can be defined as
 				\begin{equation}
-				\left.\begin{array}
-				{rl}{NTIC} & {:=I(Y_{t+1};Y_{t})-I(Y_{t+1};Y_{t}|E_{t})}\\
-				{ } & {\ =I(Y_{t+1};E_{t})-I(Y_{t+1};E_{t}|Y_{t})}
-				\end{array} \right.
+				\label{eq:NTIC}
+    				\left.\begin{array}
+    				{rl}{NTIC} & {:=I(Y_{t+1};Y_{t})-I(Y_{t+1};Y_{t}|E_{t})}\\
+    				{ } & {\ =I(Y_{t+1};E_{t})-I(Y_{t+1};E_{t}|Y_{t})}
+    				\end{array} \right.
 				\end{equation}
-
 
 			\noindent
 			And, Maximising NTIC is equivalent to
-				\begin{equation}\label{eq:nticObjective}
-				\begin{aligned}
-				& \text{maximise} & { } & I(Y_{t+1};Y_{t}) & { } & \text{and} \\
-				& \text{minimise} & { } & I(Y_{t+1};Y_{t}|E_{t}) & { }
-				\end{aligned}
+				\begin{equation}
+    				\label{eq:nticObjective}
+    				\begin{aligned}
+    				& \text{maximise} & { } & I(Y_{t+1};Y_{t}) & { } & \text{and} \\
+    				& \text{minimise} & { } & I(Y_{t+1};Y_{t}|E_{t}) & { }
+    				\end{aligned}
 				\end{equation}
 
 			\noindent
@@ -1008,88 +1010,88 @@
 		Take the neural system as an example, our theory can well explain previous empirical findings in consciousness science and further make strong and more precise predictions for future studies. In the following, we discussed the implication of the two necessary conditions with respect to the empirical data in the literature of consciousness. 
 		
 		\subsection{Unconscious Processing}
-\rlstart{3}			
-		    \subsubsection{\sim 1}
-		    % reflexive behaviour
+		
+
+        \subsubsection{Fail to meet 1\lowercase{st} condition}
+\rlstart{4}        	As described above, if a process fails to fulfil either of the two conditions, information remains unconscious. First, We consider that a process fails to satisfy the first condition, i.e. the process fails to achieve NTIC. Many processes in the neural system fall into this category. 
+        	
+        	Considering the objectives of achieving NTIC (Equation \ref{eq:nticObjective}), if a process fails to maximise $I(Y_{t+1};Y_{t})$ or minimise $I(Y_{t+1};Y_{t}|E_{t})$, this results in low NTIC. The failure to maximise $I(Y_{t+1};Y_{t})$ implies the past states has small influence on its future states. In the meantime, if the process still receives environmental information and produces outputs, the future state of the process is largely determined by the past environmental states (fig.\ref{Fig:reflexive}), i.e. the process is not informational closed (${J_{t}(E \rightarrow Y )} \not\approx 0$). 
+        	
+            % If the future states of the system have strong mutual information with the current environmental states ($I(Y_{t+1};E_{t})$) but have weak mutual information with the current system states ($I(Y_{t+1};Y_{t})$), the informational closeness will be small.
+            
+    	    
+    	    % reflexive behaviour
     		\begin{figure}[H]
     			\includegraphics[width=0.8\textwidth]{WritingMaterials/Fig_Reflexive/Reflexive.pdf}
     			\caption{Reflexive Behaviours}
     			\label{fig:reflexive}
-    		\end{figure}		
+    		\end{figure}        
+            
+            In the context of information processing in the neural system, regarding to perception, this indicates that the perceptual processes only passively responds to the sensory inputs. Regarding to action, this indicates that the process only produces reflective-like behaviour. Reflexive behaviours are commonly considered as automatic and non-conscious behavioural controls. \citep{casali2013theoretically}\needref{More referene}. We hypothesise that this is a natural consequence when a process fails to meet the first condition. 
+            
+            The same notion can be applied to blindsight and procedure memory \needref{blindsight}. Blindsight patients are able to track objects and avoid obstacles within the visual field without having any visual conscious experience. The direct stimulus-response mapping ($S\rightarrowR$) makes the internal neural circuit a non-NTIC process and results in unconscious processing. In the case of procedure memory, processes often relies on both the current environmental and system states to determine the next state of the processes\needref{Do I need ref??}. Therefore, they also fail to achieve high NTIC as well. 
+            
+             This is similar to the model-free policy-based agents in the reinforcement learning framework. The process of a system only maps the input state space to the action state space \needref{11}. The agent learns a policy $\pi$ which directly maps sensor values $S$ to output action $A$.
+            % @ $\pi : S \times A$\\
+    		\begin{equation}
+    			\label{eq:PolicyBasedAgent}
+    			\begin{aligned}
+    			    \pi(A | S)=\operatorname{Pr}\left(A_{t}=a | S_{t}=s\right)
+    			\end{aligned}
+    		\end{equation}
     		
-    		\begin{ants}
-    		    @ As described above, if a process fails to meet either one of the two necessary conditions, information remains unconscious.
-    		    
-    		    @ We first consider the first condition: A process fails to achieve NTIC. 
-    		    
-    		    @ Many processes in the neural network system fall in this category. 
-    		    
-    		    @ When a process is not information closed the internal state of the process is largely determined by the environmental state. 
-    		    
-    		    @ In terms of perception, this indicates that the process only passively reacts.
-    		    
-    		    @ In terms of action, this implies reflective behaviours.
-    		    
-    		    @ Reflective behaviours usually are considered as automatic and non-conscious behavioural controls. \citep{casali2013theoretically}\needref{More referene}.
-    		    
-    		    @ 
-    		    
-    		    @ In modern reinforcement learning framework, this usually is referred to policy-based agents. The agents constructs a policy function that maps sensory inputs to the action space \citep{sutton2018reinforcement}.
-    		    
-    		    @  Roughly speaking, a policy is a mapping from perceived states of the environment to actions to be taken when in those states. It corresponds to what in psychology would be called a set of stimulus–response rules or associations 
-    		    
-    		    @ The same principle can be applied to blindsight and procedure memory which are often considered as the classical cases of unconscious processing
-    		    
-    		    @ This classic patient study of D.F. who has apperceptive agnosia \citep{10.3389/fneur.2014.00255} also falls in this category. With online sensory inputs, the neural system can create functional processes without forming NTIC. 
-    		    
-    		    
-    		    @ Note that, when we prolong the temporal interval between stimulus and action, usually consciousness is necessary for learning associations. \needref{time}
-    		    
-    		    
-    		    @ Another case is that, processes are information closed but it is trivial. 
-    		    
-    		    
-    		    @ ============================================================================
-    		    
-    		    @ Even though the system can form NTIC processes in some certain coarse-grained levels, information processing outside these levels remains unconscious. 
-    		    
-    		    @ microscopic neural activities fall in this category. 
-    		    
-    		    @ When processes at macroscopic levels becomes informational closed, information from other levels is redundant. 
-    		    
-    		    @ Therefore, information from other levels does not influence the dynamic of this level. 
-    		    
-    		    
-    		    
-    		\end{ants}
-\rlend    		
-    		
-		
-		----------------------------------------------------------------------------
-		=== -
-		  
+    		This can explain why the patient D.F., who has apperceptive agnosia, can perform online motor controls without visual awareness of the action targets  \citep{10.3389/fneur.2014.00255}.
+    		Finally, an interesting implication from our theory is that a pure feedforward neural network cannot be conscious because there is no way to maintain any form of memory of a system and such that there is zero influence from the system past states to its future state. On the contrary, with recurrent loops, a neural network can create information channels from its past to its future and becomes capable of achieving NTIC. This result coincide with some theories of consciousness which hypothesise the recurrent neural circuits as the NCC \needref{recurrent and NCC}. However, we derive this conclusion from a more fundamental informational-related hypothesis showing that our theory has a stronger explanatory power. 
+\rlend
+
+
+        \subsubsection{Fail to meet 2\lowercase{ed} condition}
+\rlstart{3}        
+            \begin{ants}
+                @ Due to the coarse-grained level-dependence of information processing, if a process is not at levels achieving NTIC, the information remains unconscious. 
+                
+        	    @ Even though a system can form NTIC processes at some certain coarse-grained levels, information processing outside these levels remains unconscious.
+        	    
+        	    @ The first implication from this scenario is that processes at levels with high stochasticity are unable to achieve high NTIC and hence unconscious. High stochasticity corrupts informational channel capacity and leads to low mutual information between past and future states of a process. 
+        	    
+        	    @ In the neural system, the cellular level activities are highly noisy. 
+        	    
+        	    @ This prevents information from cellular activities from forming high NTIC processes.
+        	    
+        	    @ Therefore, we never can be aware of detail activities at microscopic in the neural system. 
+        	    
+        	    @ Some may argue that empirical evidence suggests single cell level correlation of conscious experience, the Jennifer Aniston cell for example. 
+        	    
+        	    @ However, to note that, the correlation is always not the microscopic state changes of the cells, e.g. the action potentials. Instead, the correlated variables are always coarse-grained, for example the firing rate which is temporal coarse-grained variables. 
+        	    
+        	    @ Second, it has been well established that heterogeneous nonlinearity is crucial for neural populations to encode rich and high dimensional information. \citep{Chelaru2008, Rigotti2010Oct, Shamir2004Jun}. Finding a single neuron whose activities align with a subspace representing a single object within the state space of a population code. \ideaCallout{Not sure if I want to add this point}
+        	    
+        	    
+        	    @ This also explains why we are not aware of probabilistic inference performed by the neural system. 
+        	    
+        	    @ Previous studies have showed that the neural system can encode probability distribution and perform probabilistic inference in a near optimal way.
+        	    
+        	    @ However, in
+                
+            \end{ants}
+        
+        
+        
+            \begin{WritingMaterials}
+            
+                @ \rewrite{Such unconscious systems compute with probability distributions, but only a single sample, drawn from this probabilistic distribution, becomes conscious at a given time ( 27 , 28 ). We may become aware of several alternative interpretations, but only by sampling their unconscious distributions over time ( 29 , 30 ).}
+            
+            \end{WritingMaterials}
+
+
+\rlend
 		
 		
-		--- 
-		procedure memory
-		Reflective reaction, blindsight, 
-		
-		
-		
-		
-		\begin{equation}\label{eq:InformationFlow}
-		\begin{aligned}
-            \pi(A|S)\\
-            {J_{t}(E \rightarrow Y )} & {:= I(Y_{t+1};E_{t}|Y_{t})} > 0
-        \end{aligned}
-		\end{equation}
-		\needhelp{Math here}
-		
-		\begin{figure}
-			\includegraphicsTodo[width=0.8\textwidth]{WritingMaterials/S_Y_A/S_Y_A_01.png}
-			\caption{Policy network}
-			\label{fig:s2a}
-		\end{figure}				
+% 		\begin{figure}
+% 			\includegraphicsTodo[width=0.8\textwidth]{WritingMaterials/S_Y_A/S_Y_A_01.png}
+% 			\caption{Policy network}
+% 			\label{fig:s2a}
+% 		\end{figure}				
 		
 		When the first condition is not satisfied,  
 		

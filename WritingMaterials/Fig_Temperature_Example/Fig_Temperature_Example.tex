@@ -1,0 +1,112 @@
+V_{T}^{A}
+V_{T}^{B}
+V_{T+1}^{A\TIMES B}
+\\
+T_{T}^{A}
+T_{T}^{B}
+T_{T+1}^{A\TIMES B}
+\\
+\VEC{\NU}_{T}^{A1}
+\VEC{\NU}_{T}^{A2}
+\VEC{\NU}_{T}^{A3}
+\VEC{\NU}_{T}^{A4}
+\VEC{\NU}_{T}^{A5}
+\VEC{\NU}_{T}^{A6}
+\VEC{\NU}_{T}^{A7}
+\VEC{\NU}_{T}^{A8}
+\\
+\VEC{\NU}_{T}^{B1}
+\VEC{\NU}_{T}^{B2}
+\VEC{\NU}_{T}^{B3}
+\VEC{\NU}_{T}^{B4}
+\VEC{\NU}_{T}^{B5}
+\VEC{\NU}_{T}^{B6}
+\VEC{\NU}_{T}^{B7}
+\VEC{\NU}_{T}^{B8}
+\\
+\VEC{\NU}^A_{T} = \{
+\VEC{\NU}_{T}^{A1},
+\VEC{\NU}_{T}^{A2},
+\VEC{\NU}_{T}^{A3},...\}
+\\
+\VEC{\NU}^B_{T} = \{
+\VEC{\NU}_{T}^{B1},
+\VEC{\NU}_{T}^{B2},
+\VEC{\NU}_{T}^{B3},...\}
+\\
+{M}_{T}^{A1}
+{M}_{T}^{A2}
+{M}_{T}^{A3}
+{M}_{T}^{A4}
+{M}_{T}^{A5}
+{M}_{T}^{A6}
+{M}_{T}^{A7}
+{M}_{T}^{A8}
+\\
+{M}_{T}^{B1}
+{M}_{T}^{B2}
+{M}_{T}^{B3}
+{M}_{T}^{B4}
+{M}_{T}^{B5}
+{M}_{T}^{B6}
+{M}_{T}^{B7}
+{M}_{T}^{B8}
+\\   
+{M}^A_{T} = \{
+{M}_{T}^{A1},
+{M}_{T}^{A2},
+{M}_{T}^{A3},...\}
+\\
+{M}^B_{T} = \{
+{M}_{T}^{B1},
+{M}_{T}^{B2},
+{M}_{T}^{B3},...\}
+\\
+T_{T+1}^{A\TIMES B} = F_{T}^{MACRO}(T_{T}^{A}, V_{T}^{A}, T_{T}^{B}, V_{T}^{B})
+\\
+V_{T+1}^{A\TIMES B} = F_{V}^{MACRO}(V_{T}^{A}, V_{T}^{B})
+\\
+{M}^{A\TIMES B}_{T+1} = F_M^{MICRO}({M}^A_{T},\VEC{\NU}^A_{T},{M}^B_{T},\VEC{\NU}^B_{T})
+\\
+{V}^{A\TIMES B}_{T+1} = F_V^{MICRO}({M}^A_{T},\VEC{\NU}^A_{T},{M}^B_{T},\VEC{\NU}^B_{T})
+\\
+{\MU}^A_{T}
+\\
+{\SIGMA}^A_{T}
+\\
+{X}_{T}^{A1}
+{X}_{T}^{A2}
+{X}_{T}^{A3}
+{X}_{T}^{A4}
+{X}_{T}^{A5}
+{X}_{T}^{A6}
+{X}_{T}^{A7}
+{X}_{T}^{A8}
+\\
+{X}_{T}^{B1}
+{X}_{T}^{B2}
+{X}_{T}^{B3}
+{X}_{T}^{B4}
+{X}_{T}^{B5}
+{X}_{T}^{B6}
+{X}_{T}^{B7}
+{X}_{T}^{B8}
+\\   
+{X}^A_{T} = \{
+{X}_{T}^{A1},
+{X}_{T}^{A2},
+{X}_{T}^{A3},...\}
+\\
+{X}^B_{T} = \{
+{X}_{T}^{B1},
+{X}_{T}^{B2},
+{X}_{T}^{B3},...\}
+\\
+\\
+\MU_{T+1}^{A\TIMES B} = F_{\MU}^{MACRO}(\MU_{T}^{A}, \SIGMA_{T}^{A}, \MU_{T}^{B}, \SIGMA_{T}^{B})
+\\
+\SIGMA_{T+1}^{A\TIMES B} = F_{\SIGMA}^{MACRO}(\SIGMA_{T}^{A}, \SIGMA_{T}^{B})
+\\
+{M}^{A\TIMES B}_{T+1} = F_M^{MICRO}({M}^A_{T},\VEC{\NU}^A_{T},{M}^B_{T},\VEC{\NU}^B_{T})
+\\
+{X}^{A\TIMES B}_{T+1} = F_X^{MICRO}({X}^A_{T},{X}^B_{T})
