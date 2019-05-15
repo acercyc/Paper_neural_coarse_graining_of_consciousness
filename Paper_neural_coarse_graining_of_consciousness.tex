@@ -167,7 +167,7 @@
 
 	% Highlight: Yellow or Red
 		% Highlight only
-		\newcommand{\highlight}[2][Yellow!75!white]{\colorbox{#1}{#2}}
+		\newcommand{\highlight}[2][Yellow]{\sethlcolor{#1}\hl{#2}}
 
 		% Highlight and comment
         \newcommand{\highlightAndComment}[3][Yellow]{\sethlcolor{#1}\hl{#2}\todo[color=#1, linecolor=Yellow]{#3}}
@@ -391,7 +391,7 @@
 
 
 
-	\section{Non-trivial informational closure}
+	\section{Non-trivial informational closure} \label{sec:Non-trivial informational closure}
 		\ideaBox{I am still not sure we should go for NTIC without describe my intuition about consciousness and closure? Or we should start with my intuition. Or we should postpone to explain the intuition in Chapter 4?}
 
 		The notion of non-trivial informational closure (NTIC) is introduced by \cite{BERTSCHINGER.2006}. The concept of closure is closely related to system identification in systems theory. One can define a system from its environment by computing the closureness of the system \citep{maturana1991autopoiesis, rosen1991life, pattee2012evolving, luhmann1995probleme}. The closureness can be further quantified by information theory.
@@ -1013,7 +1013,8 @@
 		
 
         \subsubsection{Fail to meet 1\lowercase{st} condition}
-\rlstart{4}        	As described above, if a process fails to fulfil either of the two conditions, information remains unconscious. First, We consider that a process fails to satisfy the first condition, i.e. the process fails to achieve NTIC. Many processes in the neural system fall into this category. 
+\rlstart{4}        	
+            As described above, if a process fails to fulfil either of the two conditions, information remains unconscious. First, We consider that a process fails to satisfy the first condition, i.e. the process fails to achieve NTIC. Many processes in the neural system fall into this category. 
         	
         	Considering the objectives of achieving NTIC (Equation \ref{eq:nticObjective}), if a process fails to maximise $I(Y_{t+1};Y_{t})$ or minimise $I(Y_{t+1};Y_{t}|E_{t})$, this results in low NTIC. The failure to maximise $I(Y_{t+1};Y_{t})$ implies the past states has small influence on its future states. In the meantime, if the process still receives environmental information and produces outputs, the future state of the process is largely determined by the past environmental states (fig.\ref{Fig:reflexive}), i.e. the process is not informational closed (${J_{t}(E \rightarrow Y )} \not\approx 0$). 
         	
@@ -1029,10 +1030,12 @@
             
             In the context of information processing in the neural system, regarding to perception, this indicates that the perceptual processes only passively responds to the sensory inputs. Regarding to action, this indicates that the process only produces reflective-like behaviour. Reflexive behaviours are commonly considered as automatic and non-conscious behavioural controls. \citep{casali2013theoretically}\needref{More referene}. We hypothesise that this is a natural consequence when a process fails to meet the first condition. 
             
-            The same notion can be applied to blindsight and procedure memory \needref{blindsight}. Blindsight patients are able to track objects and avoid obstacles within the visual field without having any visual conscious experience. The direct stimulus-response mapping ($S\rightarrowR$) makes the internal neural circuit a non-NTIC process and results in unconscious processing. In the case of procedure memory, processes often relies on both the current environmental and system states to determine the next state of the processes\needref{Do I need ref??}. Therefore, they also fail to achieve high NTIC as well. 
+            The same notion can be applied to blindsight and procedure memory \needref{blindsight}.
+            Blindsight patients are able to track objects, avoid obstacles,and make above chance level judgements without conscious awareness of visual targets within the visual field without having any visual conscious experience. The direct stimulus-response mapping ($S\rightarrow{}R$) makes the internal neural circuit a non-NTIC process and results in unconscious processing. In the case of procedure memory, processes often relies on both the current environmental and system states to determine the next state of the processes\needref{Do I need ref??}. Therefore, they also fail to achieve high NTIC as well. 
             
              This is similar to the model-free policy-based agents in the reinforcement learning framework. The process of a system only maps the input state space to the action state space \needref{11}. The agent learns a policy $\pi$ which directly maps sensor values $S$ to output action $A$.
             % @ $\pi : S \times A$\\
+            % Policy
     		\begin{equation}
     			\label{eq:PolicyBasedAgent}
     			\begin{aligned}
@@ -1041,11 +1044,20 @@
     		\end{equation}
     		
     		This can explain why the patient D.F., who has apperceptive agnosia, can perform online motor controls without visual awareness of the action targets  \citep{10.3389/fneur.2014.00255}.
+    		Our theory also explains why the unconscious processing in this category often fail when long delay periods are introduced in the tasks. Because without self-predicitve information in NTIC, the policies of motor outputs largely depends on the present sensory states implying that this type of processes can only perform online. With certain delays, sensory information is unable to guide the delayed motor outputs and leads to failure consequences. 
+    		
     		Finally, an interesting implication from our theory is that a pure feedforward neural network cannot be conscious because there is no way to maintain any form of memory of a system and such that there is zero influence from the system past states to its future state. On the contrary, with recurrent loops, a neural network can create information channels from its past to its future and becomes capable of achieving NTIC. This result coincide with some theories of consciousness which hypothesise the recurrent neural circuits as the NCC \needref{recurrent and NCC}. However, we derive this conclusion from a more fundamental informational-related hypothesis showing that our theory has a stronger explanatory power. 
 \rlend
 
 
         \subsubsection{Fail to meet 2\lowercase{ed} condition}
+
+		\begin{figure}[H]
+			\includegraphics[width=1.3\textwidth]{WritingMaterials/Fig_Temperature_Example/ExampleOfCG.pdf}
+			\centering
+			\caption{An Example of ...}
+			\label{fig:TemperatureExample}
+		\end{figure}   
 \rlstart{3}        
             \begin{ants}
                 @ Due to the coarse-grained level-dependence of information processing, if a process is not at levels achieving NTIC, the information remains unconscious. 
@@ -1067,11 +1079,51 @@
         	    @ Second, it has been well established that heterogeneous nonlinearity is crucial for neural populations to encode rich and high dimensional information. \citep{Chelaru2008, Rigotti2010Oct, Shamir2004Jun}. Finding a single neuron whose activities align with a subspace representing a single object within the state space of a population code. \ideaCallout{Not sure if I want to add this point}
         	    
         	    
-        	    @ This also explains why we are not aware of probabilistic inference performed by the neural system. 
+        	    @ This also explains why we are not aware of probabilistic inference performed by the neural system but only a "sample" of W
         	    
-        	    @ Previous studies have showed that the neural system can encode probability distribution and perform probabilistic inference in a near optimal way.
+        	    @ Previous studies have showed that the neural system is able to encode probability distribution and perform probabilistic inference in a near optimal way.
         	    
-        	    @ However, in
+        	    @ However, we are ignorant nearly all the computation when the neural system performs probabilistic inference. 
+        	    
+        	    @ Fig. \ref{fig:TemperatureExample} showed that because the computation is performed at microscopic levels, only the macroscopic variables, e.g. the summary statistics, are at the level with NTIC and become conscious. 
+        	    
+        	    
+        	    % Libet's experient
+        	    
+        	    @ The same scenario can also explain the results of Libet's experiment. In this experiment, in this experiment, Libet found that the neural activities (indicated by event-related potential) start earlier than the feeling of intention to perform an self-determined action. 
+        	    
+        	    @ \citeauthor{schurger2012accumulat}
+        	    
+        	    @ The movement preparation initiates at the microscopic level. 
+        	    
+        	    @ However, coarse-graining always maps a larger state space at microscopic levels to a equal or smaller state space at macroscopic levels (i.e. a surjective function). As the result, the state transitions at microscopic levels do not always lead to state transitions at macroscopic levels.
+        	    
+        	    @ Therefore, the initiative neural correlates of the free motor actions remained unconscious until the macroscopic state transition at the NTIC level. 
+        	    
+        	    % multistable perception
+        	    In the case of multistable perception, at every moment, only a single macroscopic state is mapped from the microscopic levels, we can only be aware of one interpretation at every moment. 
+        	    
+        	    
+        	    % Priming
+        	    @ The same mechanism can also applied to unconscious priming effects. \highlight{Making state transitions at microscopic levels does not guarantee transitions at macroscopic levels.}\ideaCallout{this is the key sentence}
+        	    
+        	    @ Of course, this is related to what kind of coarse-grain function which can form a NTIC process at macroscopic scales. We will discuss this issue in the later section.
+        	    
+        	   
+        	   
+        	   @  === boundary conditions  ===
+        	   @ The third category is the boundary conditions. 
+        	   
+        	   % Binocular rivalry
+        	   @ In binocular rivalry, either eye provides information to form a NTIC process. Once the process is NTIC, the process continue the trajectory in the state space and close system. Information from the other eye is unable to enter the process, thus it remains unconscious. 
+        	   
+        	   @ Including information from either of objects information can achieve NTIC. 
+        	   
+        	   @ For example, when the information of the visual stimuli both can form the NTIC.
+        	   
+        	   @ Our theory also explains why the conscious percepts show some kind of inertia (stably remain conscious for a period of time). 
+        	   
+        	   @ Once the NTIC process is formed, the closureness guarantees the stability of the state transitions of the process. 
                 
             \end{ants}
         
@@ -1084,116 +1136,66 @@
             \end{WritingMaterials}
 
 
-\rlend
-		
-		
-% 		\begin{figure}
-% 			\includegraphicsTodo[width=0.8\textwidth]{WritingMaterials/S_Y_A/S_Y_A_01.png}
-% 			\caption{Policy network}
-% 			\label{fig:s2a}
-% 		\end{figure}				
-		
-		When the first condition is not satisfied,  
-		
-		
-		
-		In this case, the future state of this process is partially or fully determined by environment states. We can see 
-		
-		\begin{ants}
-		    @ Conscious
-		    
-		    @ Boundary 
-    		    @@ binocular rivalry/CFS
-    		    @@ Libet's experiment
-    		    @@ Unconscious determinants of free decisions in the human brain    		    
-    		    @@ Priming
-    		    @@ Bistable perception
-    		    @@ Perceptual overflow
-    		    @@ Threshold of unconscious to consciousness
-    		    @@ Probabilistic information is always unconscious
-    		    
-		    @ Unconscious 
-                @@ Reflection
-        			@@@ Reflexive systems is not informational closured.
-        			@@@ Base	d on our theory,
-        			@@@ x -> s -> a
-        			@@@@ the system state is determined by environmental state, then it is not conscious.
-        			@@@ Therefore, in general, a simple policy network is not conscious.
-        			
-        			
-    			@@ Blindsight
-    			
-	    			@ Passive neural activity
-    			
-		\end{ants}
-		    
-		\subsection{reflexive behaviours is unconscious (or environment-state dependent processes)}\label{sec:reflexive}
-		\subsubsection{Reflection}
-		\begin{ants}
-			@ Reflexive systems is not informational closured.
-			@ Base	d on our theory,
-			@ $P(A|S)$ action policy is conditional on the sensory input data.
-			@ x -> s -> a
-			@@ the system state is determined by environmental state, then it is not conscious.
-			@ Therefore, in general, a simple policy network is not conscious.
-		\end{ants}
-
-		\subsubsection{Blindsight}
-		\begin{ants}
-			@ This also blindsight.
-			@ Blindsight patients and still make above chance judgement without conscious awareness of visual targets.
-			@ The stimulus-reaction policy network still intact, but it cannot form informational closure and therefore, patients has no conscious awareness of visual  targets
-			@ Patient B.F. reactions are stimulus driven.
-		\end{ants}
-
-		\subsubsection{procedure memory}
-		
-	
+\rlends
 		
 		\subsection{Conscious Processing}
-		So far, previous consciousness research has identified a set of perceptual and cognitive functions which not exclusively but frequently associate with consciousness. 
-		
-		\begin{ants}
-            @ response inhibition 
-            @ goal
-            @ planning            
-            @ conflict resolution
-            @ error detection         
-            @ task-switching
-            @ working memory
-            @ cognitive control 
-            @ overriding automatic responses
-            @ self-monitoring 
-            @ global availability 
-            @ integration             
-            @ stabilisation
-            @ information for off-line processing
-            @ flexible routing of information
-            @ integrates behaviour across time            
-            @ tasks for long duration
-            @ flexibility and the strategic use of that information for complex operations and decision-making 
-            @ flexible and adjust our behavior to different contexts and goals
-            @ complex visuomotor abilities
-            @ conscious thought, reflection, reasoning, and temporally extended sense of self. 
-            @ multiple alternative possibilities
-            @ simulate alternative realities 
-            @ imagination
-            @ dreaming 
-            @ anticipation
-            @ intending
-            @ replaying
-            @ interpreting
-            @ reflecting
-            @ reasoning
-            @ problem solving 
-            @ deciding            
-		\end{ants}
-		
-
 		
 		To achieve high NTIC has evolutionary advantage. When a process achieves NTIC, the current state of the process contains the information about its future state (Eq. (5)). Therefore, the neural system can build forward models to predict the future state of the environment using the information encoded in the NTIC process. Cognitive functions recruiting forward models built upon it are conscious. (E.g., planning and imagination)
 		
-		It is important to note that we do suggest any functionalism of consciousness. Rather, we believe that information is fundamentally linked to consciousness. The reason why consciousness is accompanied with some specific cognitive function is because NTIC is a powerful property that brings creatures a lot of advantage in the evolution \cite{Seth2009Encyclopediaofconsciousness}. 
+		It is important to note that we do suggest any functionalism of consciousness. Rather, we believe that information is fundamentally linked to consciousness. The reason why consciousness is accompanied with some specific cognitive function is because NTIC is a powerful property that brings creatures a lot of advantage in the evolution \cite{Seth2009Encyclopediaofconsciousness}. 		
+		
+		
+		\begin{ants}
+		    @ If both conditions are satisfied, information within the NTIC process becomes conscious. 
+		    @ Our theory suggests that conscious processing should be linked to cognitive functions that require forward models and predictive information \critical{Need to list items vary carefully here.}
+		    
+		    @ Previous research has identified a set of perceptual and cognitive functions which not exclusively but frequently associate with consciousness. 
+		    
+    		    @@ Planning, achieving long term goals
+    		    
+    		        @@@ simulate alternative realities 
+    		        @@@ multiple alternative possibilities
+    		        @@@ imagination
+    		        @@@ information for off-line processing
+    		    
+    		    @@ Cognitive control, response inhibition, flexible routing of information, overriding automatic responses
+    		    
+    		        @@@ flexibility and the strategic use of that information for complex operations and decision-making 
+    		        @@@ flexible and adjust our behavior to different contexts and goals
+    		    
+    		    @@ integration,
+    		    
+    		    @@ integrates behaviour across time
+    		    
+    		        @@@ tasks for long duration
+    		    
+    		    @@ stabilisation
+    		    
+    		    @@ conscious thought, reflection, reasoning, and temporally extended sense of self. 
+    		    
+    		    @@ complex visuomotor abilities
+    		    
+    		    @@ intending deciding
+    		    
+    		    @@ dreaming
+    		    
+    		    @@ reasoning interpreting
+    		    
+    		    @@ self
+    		    
+    		        @@@ reflecting
+    		        @@@ self-monitoring 
+            @ As mentioned in \ref{sec:Non-trivial informational closure}, achieving NTIC has a large evolutionary advantage. 
+            
+                @@ Because NTIC processes encode information about environmental transition, it becomes a perfect computational core for constructing forward models for the environment, simulating the dynamics of self-environment interaction, and generating predictions. 
+                
+            @ Therefore, if an agent equips a NTIC process, the process can be used to integrate information from different sources. 
+                
+                
+		\end{ants}
+		
+
+	
 		 
 	    \begin{WritingMaterials}
 	        @ importantly, evidence suggests that those functions in some conditions do not require the involvement of consciousness. This evidences an important fact that consciousness is not necessay to these functions. 
@@ -1775,7 +1777,9 @@
             
             @ However, our theory cannot tell why $X$ and $Y$ map to $red$ and $blue$ ,respectively, rather than the other way around. 
             
-            @ 
+            % about the coarse-graining function (aggregation function) 
+            @ \cite{PFANTE.2014}, the authors discuss the the implications of the types of aggregation function (deterministic or probabilistic) and its relationship with macroscopic processes. If the macroscopic process: \rewrite{Furthermore, we could prove that observational commutativity forces the aggregation to be deterministic if the upper process is invertible, i.e., ψ is invertible, and in the case of a soft (i.e., probabilistic) aggregation the third idea of commutativity really differs from the one of observational commutativity. } 
+            
             
             
             @ Our theory does not explain the mapping

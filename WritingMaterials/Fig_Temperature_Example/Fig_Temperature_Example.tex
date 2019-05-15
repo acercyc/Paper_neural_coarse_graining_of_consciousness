@@ -1,11 +1,16 @@
-V_{t}^{A}
-V_{t}^{B}
-V_{t+1}^{A\times B}
-\\
+\documentclass[utf8]{article}
+\usepackage{amsmath}
+
+ 
+\begin{document}
+Start Math
+\begin{align*}
+&V_{t}^{A}
+V_{t}^{B} 
+V_{t+1}^{A\times B} \\&
 T_{t}^{A}
 T_{t}^{B}
-T_{t+1}^{A\times B}
-\\
+T_{t+1}^{A\times B} \\&
 \vec{\nu}_{t}^{A1}
 \vec{\nu}_{t}^{A2}
 \vec{\nu}_{t}^{A3}
@@ -13,8 +18,7 @@ T_{t+1}^{A\times B}
 \vec{\nu}_{t}^{A5}
 \vec{\nu}_{t}^{A6}
 \vec{\nu}_{t}^{A7}
-\vec{\nu}_{t}^{A8}
-\\
+\vec{\nu}_{t}^{A8} \\&
 \vec{\nu}_{t}^{B1}
 \vec{\nu}_{t}^{B2}
 \vec{\nu}_{t}^{B3}
@@ -22,18 +26,15 @@ T_{t+1}^{A\times B}
 \vec{\nu}_{t}^{B5}
 \vec{\nu}_{t}^{B6}
 \vec{\nu}_{t}^{B7}
-\vec{\nu}_{t}^{B8}
-\\
+\vec{\nu}_{t}^{B8} \\&
 \vec{\nu}^A_{t} = \{
 \vec{\nu}_{t}^{A1},
 \vec{\nu}_{t}^{A2},
-\vec{\nu}_{t}^{A3},...\}
-\\
+\vec{\nu}_{t}^{A3},...\} \\&
 \vec{\nu}^B_{t} = \{
 \vec{\nu}_{t}^{B1},
 \vec{\nu}_{t}^{B2},
-\vec{\nu}_{t}^{B3},...\}
-\\
+\vec{\nu}_{t}^{B3},...\} \\&
 {m}_{t}^{A1}
 {m}_{t}^{A2}
 {m}_{t}^{A3}
@@ -41,8 +42,7 @@ T_{t+1}^{A\times B}
 {m}_{t}^{A5}
 {m}_{t}^{A6}
 {m}_{t}^{A7}
-{m}_{t}^{A8}
-\\
+{m}_{t}^{A8} \\&
 {m}_{t}^{B1}
 {m}_{t}^{B2}
 {m}_{t}^{B3}
@@ -50,30 +50,23 @@ T_{t+1}^{A\times B}
 {m}_{t}^{B5}
 {m}_{t}^{B6}
 {m}_{t}^{B7}
-{m}_{t}^{B8}
-\\   
+{m}_{t}^{B8} \\&
 {m}^A_{t} = \{
 {m}_{t}^{A1},
 {m}_{t}^{A2},
-{m}_{t}^{A3},...\}
-\\
+{m}_{t}^{A3},...\} \\&
 {m}^B_{t} = \{
 {m}_{t}^{B1},
 {m}_{t}^{B2},
-{m}_{t}^{B3},...\}
-\\
-T_{t+1}^{A\times B} = f_{T}^{macro}(T_{t}^{A}, V_{t}^{A}, T_{t}^{B}, V_{t}^{B})
-\\
-V_{t+1}^{A\times B} = f_{V}^{macro}(V_{t}^{A}, V_{t}^{B})
-\\
-{m}^{A\times B}_{t+1} = f_m^{micro}({m}^A_{t},\vec{\nu}^A_{t},{m}^B_{t},\vec{\nu}^B_{t})
-\\
-{v}^{A\times B}_{t+1} = f_v^{micro}({m}^A_{t},\vec{\nu}^A_{t},{m}^B_{t},\vec{\nu}^B_{t})
-\\
-{\mu}^A_{t}
-\\
-{\sigma}^A_{t}
-\\
+{m}_{t}^{B3},...\} \\&
+T_{t+1}^{A\times B} = f_{T}^{macro}(T_{t}^{A}, V_{t}^{A}, T_{t}^{B}, V_{t}^{B}) \\&
+V_{t+1}^{A\times B} = f_{V}^{macro}(V_{t}^{A}, V_{t}^{B}) \\&
+{m}^{A\times B}_{t+1} = f_m^{micro}({m}^A_{t},\vec{\nu}^A_{t},{m}^B_{t},\vec{\nu}^B_{t}) \\&
+{v}^{A\times B}_{t+1} = f_v^{micro}({m}^A_{t},\vec{\nu}^A_{t},{m}^B_{t},\vec{\nu}^B_{t}) \\&
+\xrightarrow[T_{t+1}^{A\times B} = f_{T}^{macro}(T_{t}^{A}, V_{t}^{A}, T_{t}^{B}, V_{t}^{B})]{V_{t+1}^{A\times B} = f_{V}^{macro}(V_{t}^{A}, V_{t}^{B})} \\&
+\xrightarrow[f_m^{micro}({m}^A_{t},\vec{\nu}^A_{t},{m}^B_{t},\vec{\nu}^B_{t})]{{v}^{A\times B}_{t+1} = f_v^{micro}({m}^A_{t},\vec{\nu}^A_{t},{m}^B_{t},\vec{\nu}^B_{t})}
+{\mu}^A_{t} \\&
+{\sigma}^A_{t} \\&
 {x}_{t}^{A1}
 {x}_{t}^{A2}
 {x}_{t}^{A3}
@@ -81,8 +74,7 @@ V_{t+1}^{A\times B} = f_{V}^{macro}(V_{t}^{A}, V_{t}^{B})
 {x}_{t}^{A5}
 {x}_{t}^{A6}
 {x}_{t}^{A7}
-{x}_{t}^{A8}
-\\
+{x}_{t}^{A8} \\&
 {x}_{t}^{B1}
 {x}_{t}^{B2}
 {x}_{t}^{B3}
@@ -90,23 +82,21 @@ V_{t+1}^{A\times B} = f_{V}^{macro}(V_{t}^{A}, V_{t}^{B})
 {x}_{t}^{B5}
 {x}_{t}^{B6}
 {x}_{t}^{B7}
-{x}_{t}^{B8}
-\\   
+{x}_{t}^{B8} \\&
 {x}^A_{t} = \{
 {x}_{t}^{A1},
 {x}_{t}^{A2},
-{x}_{t}^{A3},...\}
-\\
+{x}_{t}^{A3},...\} \\&
 {x}^B_{t} = \{
 {x}_{t}^{B1},
 {x}_{t}^{B2},
-{x}_{t}^{B3},...\}
-\\
-\\
-\mu_{t+1}^{A\times B} = f_{\mu}^{macro}(\mu_{t}^{A}, \sigma_{t}^{A}, \mu_{t}^{B}, \sigma_{t}^{B})
-\\
-\sigma_{t+1}^{A\times B} = f_{\sigma}^{macro}(\sigma_{t}^{A}, \sigma_{t}^{B})
-\\
-{m}^{A\times B}_{t+1} = f_m^{micro}({m}^A_{t},\vec{\nu}^A_{t},{m}^B_{t},\vec{\nu}^B_{t})
-\\
-{x}^{A\times B}_{t+1} = f_x^{micro}({x}^A_{t},{x}^B_{t})
+{x}_{t}^{B3},...\} \\ \\&
+\mu_{t+1}^{A\times B} = f_{\mu}^{macro}(\mu_{t}^{A}, \sigma_{t}^{A}, \mu_{t}^{B}, \sigma_{t}^{B}) \\&
+\sigma_{t+1}^{A\times B} = f_{\sigma}^{macro}(\sigma_{t}^{A}, \sigma_{t}^{B}) \\&
+{m}^{A\times B}_{t+1} = f_m^{micro}({m}^A_{t},\vec{\nu}^A_{t},{m}^B_{t},\vec{\nu}^B_{t}) \\&
+{x}^{A\times B}_{t+1} = f_x^{micro}({x}^A_{t},{x}^B_{t}) \\\\&
+% mapping
+\xrightarrow[\sigma_{t+1}^{A\times B} = f_{\sigma}^{macro}(\sigma_{t}^{A}, \sigma_{t}^{B})]{\mu_{t+1}^{A\times B} = f_{\mu}^{macro}(\mu_{t}^{A}, \sigma_{t}^{A}, \mu_{t}^{B}, \sigma_{t}^{B})} \\& 
+\xrightarrow[]{{x}^{A\times B}_{t+1} = f_x^{micro}({x}^A_{t},{x}^B_{t})}
+\end{align*}
+\end{document}
