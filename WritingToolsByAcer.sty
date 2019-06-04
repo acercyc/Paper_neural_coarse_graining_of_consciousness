@@ -1,0 +1,276 @@
+\ProvidesPackage{WritingToolsByAcer}
+
+
+%% Language and font encoding
+\usepackage[english]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+%\usepackage[a4paper, top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=4cm]{geometry}
+\usepackage[papersize={10in, 12in}, top=3cm,bottom=2cm,left=2in,right=2in,marginparwidth=1.8in]{geometry}
+
+
+%% Title style
+\usepackage{stringstrings}
+\usepackage[explicit]{titlesec}
+\usepackage{sectsty}
+
+
+
+%% ============================== Useful packages ============================= %
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\usepackage[round]{natbib}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{authblk}
+\usepackage{float}
+\usepackage{tikz}
+
+
+
+
+
+%% ================================== acronym ================================= %
+\usepackage{acronym}
+\newacro{ntic}{non-trivial informational closure}
+\newacro{ic}{informational closure}
+\newacro{cg}{coarse-grain}
+\newacro{cging}{coarse-graining}
+\newacro{cged}{coarse-grained}
+\newacro{ncg}{neural coarse-graining}
+
+
+% The name of our theory
+% ----------------------------------------------------------------------------
+\newcommand{\tnamefull}{The Neural Coarse-graining Theory of Consciousness}
+\newcommand{\tname}{NCGT} 	% TheoryNameShort
+\newacro{\tname}{\tnamefull}
+%\newacro{NCGT}{the neural coarse-graining theory of consciousness}
+
+
+
+% =================================== Macro ================================== %
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[at]{easylist}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{comment}
+\usepackage[framemethod=tikz]{mdframed}
+\usetikzlibrary{shadows}
+\usepackage{soul}
+\usepackage{version}
+
+
+% Meaning of colours --------------------------------------------------------- %
+%	Red: Important and Critical
+%	Orange: Todo
+%	Blue: Topic and Guideline
+%	Purple: Murmur
+%	Green: Question, Call for help, Open for opinions and comments
+%	Brown: Need Wording
+% ---------------------------------------------------------------------------- %
+
+
+% Real content
+	% Outline items that can be integrated into main text
+		\newenvironment{ants}
+			{
+			 \begin{easylist}[itemize]
+		 	}
+			{
+			\end{easylist}
+			} %
+
+	% Writing Materials
+    \newenvironment{WritingMaterials} %
+    	{
+            \begin{tcolorbox}[enhanced,
+                title=-,
+                size=small,
+                colbacktitle=Aquamarine,
+                drop fuzzy shadow,
+                fontupper=\small,
+                boxrule=0.4pt,
+                colback=Aquamarine!10!white,
+                sharp corners]
+                Writing Materials
+            \end{tcolorbox}
+            \begin{easylist}[itemize]
+    	}
+    	{
+            \end{easylist}  
+            \begin{tcolorbox}[enhanced,
+                halign=flush right,
+                halign title=right,
+                size=small,
+                colbacktitle=Aquamarine,
+                drop fuzzy shadow,
+                fontupper=\small,
+                boxrule=0.4pt,
+                colback=Aquamarine,
+                colupper=White,
+                sharp corners]
+                Writing Materials -
+            \end{tcolorbox}        
+    	}	
+    	
+    % \excludeversion{WritingMaterials}
+
+
+% Functional content
+	% Quotes: green
+		\newcommand{\rewrite}[1]{\textcolor{ForestGreen}{\textit{"#1"}}\newline}
+
+
+	% todo: orange
+		% text todo
+		\newcommand{\toWrite}[1]{\noindent
+			\textcolor{Orange}{\textbf{[[ #1 ]]}}}
+
+	% figure todo
+        \newcommand{\includegraphicsTodo}[2][]{%
+            \tcbox[enhanced,
+                center,
+            	adjusted title=\large To Be Modified ...,
+            	halign title=center,
+            	attach boxed title to top left={yshift=-3mm, xshift=1cm,yshifttext=-1mm}, boxed title style={drop fuzzy shadow},
+            	colbacktitle=RedOrange!70!black,
+            	coltitle=white,
+            	colframe=RedOrange!50!black,
+            	colback=white
+        	]{\includegraphics[#1]{#2}}}
+				
+		% figure todo callout
+        \newcommand{\needfig}[1]{%
+			\ifthenelse{\equal{#1}{}}{%
+				\todo[color=White, linecolor=Orange, bordercolor=RedOrange]{\textcolor{RedOrange}{Fig}}}{%
+				\todo[color=White, linecolor=Orange, bordercolor=RedOrange]{\textcolor{RedOrange}{Fig: #1}}%
+			}%
+		}	
+		
+
+		% rewording
+		\newcommand{\rewording}[1]{\textcolor{RawSienna}{[[ REWORDING | #1 ]]}}
+
+		% Need reference
+		\newcommand{\needref}[1]{%
+			\ifthenelse{\equal{#1}{}}{%
+				\todo[color=White, linecolor=Orange, bordercolor=Orange]{\textcolor{Orange}{Ref}}}{%
+				\todo[color=White, linecolor=Orange, bordercolor=Orange]{\textcolor{Orange}{Ref: #1}}%
+			}%
+		}
+
+
+
+	% Highlight: Yellow or Red
+		% Highlight only
+		\newcommand{\highlight}[2][Yellow]{\sethlcolor{#1}\hl{#2}}
+
+		% Highlight and comment
+        \newcommand{\highlightAndComment}[3][Yellow]{\sethlcolor{#1}\hl{#2}\todo[color=#1, linecolor=Yellow]{#3}}
+
+		% Critical point
+		\newcommand{\critical}[1]{%
+			\todo[color=OrangeRed!80!white]{#1}
+		}
+
+
+
+	% idea: Purple
+		% text idea
+			\newcommand{\idea}[2][Plum]{\noindent
+				\textcolor{#1}{[[ #2 ]]}}
+
+		% box idea
+			\newcommand{\ideaBox}[1]{
+			    \vspace{2mm}
+				\begin{tcolorbox}[enhanced,%
+                    title=-,
+                    center,
+                    fontupper=\small,
+                    lifted shadow={1mm}{-2mm}{3mm}{0.1mm}{black!50!white},%
+                    boxrule=0.4pt,
+                    width=9cm,
+                    colback=Thistle!50!white,
+                    sharp corners]
+					#1
+				\end{tcolorbox}
+				\vspace{2mm}
+			}
+
+		% call-out idea
+			\newcommand{\ideaCallout}[1]{\todo[color=Thistle!50!white, size=\small]{#1}}
+
+
+	% communication: green
+		% call for help
+			\newcommand{\needhelp}[1]{\todo[color=SpringGreen]{[Need Help]: #1}}
+
+
+		% comment
+			% comment by authors
+			\newcommand{\addcomment}[3][\empty]{\todo[color=SkyBlue]{Comment [#2]:\newline#3}\colorbox{SkyBlue}{#1}}
+
+			% usage:
+			% \addcomment{auther}{comment text}
+			% or
+			% \addcomment[highlighted text]{auther}{comment text}
+			%
+			% e.g.
+			% It's a \addcomment[beautiful]{Acer}{need a reference} day
+
+
+    % backup: 
+    \newenvironment{backup}
+    {
+        
+        \begin{tcolorbox}[enhanced,
+            title=-,
+            size=small,
+            colbacktitle=black!70!white,
+            colback=black!10!white,            
+            drop fuzzy shadow,
+            fontupper=\small,
+            boxrule=0.4pt,
+            sharp corners]
+            Backup
+        \end{tcolorbox}
+    }
+    {
+        \begin{tcolorbox}[enhanced,
+            halign=flush right,
+            halign title=right,
+            size=small,
+            colbacktitle=black!10!white,
+            colback=black!70!white,
+            drop fuzzy shadow,
+            fontupper=\small,
+            boxrule=0.4pt,
+            colupper=White,
+            sharp corners]
+            Backup -
+        \end{tcolorbox}    
+    }
+    % \excludeversion{backup}
+    
+    
+    
+% review loop annotation
+    \usepackage[xcolor, outerbars]{changebar}
+    \cbcolor{red}
+    
+    % start anchor: \rlstart
+    \newcommand{\rlstart}[1]{  %
+        \setlength\changebarwidth{#1pt*2}  %
+        \hspace*{-40pt}
+        \cbstart{\textcolor{red}{\newline\textbf{iteration #1}}\newline}}
+    
+    % end anchor: \rlend
+    \newcommand{\rlend}{\cbend}
+
+
+% quote
+\newcommand{\myQuote}[1]{\textit{``#1''}}
